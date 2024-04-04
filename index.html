@@ -6,14 +6,66 @@
 	<meta name="viewport" content= 
 		"width=device-width, initial-scale=1.0"> 
 	<title>PONG GAME</title> 
-	<link rel="stylesheet" href="styles.css"> 
+	<link rel="stylesheet" href="style.css"> 
+	<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7GnmIsRmunicVjolqaQgF8F4YdBUKg0E6eQ&usqp=CAU">
+	<style>
+		.alert-container {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1000;
+	}
+	
+	.alert-box {
+		width: 600px;
+		padding: 20px;
+		border-radius: 10px;
+		background: #000000;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		text-align: center;
+	}
+	
+	.alert-box p {
+		margin-bottom: 20px;
+		font-size:50px;
+        font-weight: bold;
+		font-family: serif;
+		color:#990f0f;
+
+	}
+	
+	.alert-box button {
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		background-color: #007bff;
+		color: #ffffff;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+	
+	.alert-box button:hover {
+		background-color: #0056b3;
+	}</style>
+
 </head> 
 
 <body> 
+    
 	<div class="board"> 
 		<div class='ball'> 
+			
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
 			<div class="ball_effect"></div> 
+			
 		</div> 
+		
+		
 		<div class="paddle_1 paddle"></div> 
 		<div class="paddle_2 paddle"></div> 
 		<h1 class="player_1_score">0</h1> 
@@ -21,9 +73,23 @@
 		<h1 class="message"> 
 			Press Enter to Play Pong 
 		</h1> 
-	</div> 
+	</div>
+	<div class="num-of-tries-left" id="chanceCount">
+		<span>Tries Left:</span>05
+	  </div> 
+	  <audio id="gameOverSound">
+		<source src="gameover.wav" type="audio/mpeg">
+		Your browser does not support the audio element.
+	  </audio>
+	  <audio id="paddleHitSound" src="sound.mp3"></audio>
+	  <audio id="startGameSound" src="startgame.mp3" preload="auto"></audio>
+
+	  
 	
 	<script src="index.js"></script> 
+
 </body> 
 
 </html> 
+
+
